@@ -9,8 +9,8 @@ COPY ./* /home/app/
 RUN pip install Flask
 RUN pip install Redis
 
-# Make port 1234 available to the world outside of this container
-EXPOSE 1234
+# Make port 80 available to the world outside of this container
+EXPOSE 80
 
 # Run app.py when the container launches
 CMD python app.py
