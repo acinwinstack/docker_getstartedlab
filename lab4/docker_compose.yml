@@ -1,44 +1,37 @@
 version: "3"
+
 services:
+
   web:
-    # replace acinwinstack/getstartedlab with your name and image details
-    image: acinwinstack/getstartedlab:p80
+    image: "acinwinstack/getstartedlab:p80"
     deploy:
       replicas: 5
       restart_policy:
-        condition: on-failure
+        condition: "on-failure"
       resources:
         limits:
           cpus: "0.1"
-          memory: 50M
-    ports:
-      - "80:80"
-    networks:
-      - webnet
+          memory: "50M"
+    ports: ["80:80"]
+    networks: ["webnet"]
+
   visualizer:
-    image: dockersamples/visualizer:stable
-    ports:
-      - "8080:8080"
-    volumes:
-      - "/var/run/docker.sock:/var/run/docker.sock"
+    image: "dockersamples/visualizer:stable"
     deploy:
       placement:
         constraints: [node.role == manager]
-    networks:
-      - webnet
+    ports: ["8080:8080"]
+    volumes: ["/var/run/docker.sock:/var/run/docker.sock"]
+    networks: ["webnet"]
+
   redis:
-    image: redis
-    ports:
-      - "6379:6379"
-    volumes:
-      - ./data:/data
+    image: "redis"
     deploy:
-      replicas: 2
-      restart_policy:
-        condition: on-failure
       placement:
         constraints: [node.role == manager]
-    networks:
-      - webnet
+    ports: ["6379:6379"]
+    volumes: ["./data:/data"]
+    networks: ["webnet"]
+
 networks:
   webnet:
