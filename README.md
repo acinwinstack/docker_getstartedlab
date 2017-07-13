@@ -8,5 +8,5 @@
 ##############################################################
 
 <h3>Key Take-aways</h3>
-	1) Dockerfile 編輯
-	2) docker-compose.yml 編輯 
+<h3>1) Dockerfile 編輯</h3><br>
+<h3>2) docker-compose.yml 編輯 </h3>
