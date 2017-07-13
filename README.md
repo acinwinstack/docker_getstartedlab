@@ -5,6 +5,8 @@
 3. 用 Docker 自動配置 containers 於 2 台 VM 
 4. 於 port:8080 監看 containers 配置與運行狀態
 
-#Key Take-aways:
-1) Dockerfile 編輯
-2) docker-compose.yml 編輯
+##############################################################
+
+<h3>Key Take-aways</h3>
+	1) Dockerfile 編輯
+	2) docker-compose.yml 編輯 
